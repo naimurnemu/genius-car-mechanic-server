@@ -6,7 +6,7 @@ require("dotenv").config();
 
 const app = express();
 // port
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 // middle ware
 app.use(cors());
@@ -66,7 +66,7 @@ async function run() {
 run().catch(console.dir);
 
 app.get("/", (req, res) => {
-    res.send("Running Genius server");
+    res.send("Running Genius server in local");
 });
 
 app.listen(port, () => {
